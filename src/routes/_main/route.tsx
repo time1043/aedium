@@ -9,17 +9,20 @@ export const Route = createFileRoute('/_main')({
 
 function RouteComponent() {
   return (
-    <div className="drawer lg:drawer-open">
-      <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        <Navbar />
-        {/* Page content here */}
-        <div className="p-4">
-          <Outlet />
-        </div>
-      </div>
+    <div className="flex h-screen flex-col overflow-hidden">
+      <Navbar />
 
-      <Sidebar />
+      <div className="drawer flex-1 overflow-hidden lg:drawer-open">
+        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+
+        <div className="drawer-content flex flex-col overflow-hidden">
+          <main className="flex-1 overflow-y-auto p-4">
+            <Outlet />
+          </main>
+        </div>
+
+        <Sidebar />
+      </div>
     </div>
   );
 }
