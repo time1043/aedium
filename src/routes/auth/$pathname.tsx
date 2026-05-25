@@ -12,6 +12,7 @@ function RouteComponent() {
 
   return (
     <AuthView
+      className="neon-auth-patch"
       pathname={pathname}
       redirectTo={pathname === 'sign-out' ? IndexRoute.to : undefined}
     />
