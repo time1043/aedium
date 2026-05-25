@@ -6,8 +6,9 @@ import BreakpointIndicator from '@/components/BreakpointIndicator';
 import { authClient } from '@/libs/auth';
 
 const RootLayout = () => (
-  <NeonAuthUIProvider authClient={authClient}>
+  <NeonAuthUIProvider authClient={authClient} emailOTP>
     <Outlet />
+    {/* <Toaster position="top-center" richColors /> */}
     <BreakpointIndicator />
     <TanStackRouterDevtools position="bottom-left" />
   </NeonAuthUIProvider>

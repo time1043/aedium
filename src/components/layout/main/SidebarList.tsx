@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 
 import { HouseIcon, NotePencilIcon } from '@phosphor-icons/react';
-import { useLocation, useNavigate } from '@tanstack/react-router';
+import { useLocation } from '@tanstack/react-router';
 
 import type { FileRouteTypes } from '@/routeTree.gen';
 
+import { useNavigateVerified } from '@/hooks/useNavigateVerified';
 import { Route as ArticlesDraftRoute } from '@/routes/_main/articles/draft';
 
 import SidebarListItem from './SidebarListItem';
@@ -22,7 +23,7 @@ const sidebarList: NavItem[] = [
 ];
 
 export default function SidebarList() {
-  const navigate = useNavigate();
+  const { navigateEmailVerified } = useNavigateVerified();
   const { pathname } = useLocation();
 
   return (
@@ -36,7 +37,7 @@ export default function SidebarList() {
         <button
           className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${pathname === ArticlesDraftRoute.to ? 'bg-secondary' : 'bg-primary'} text-primary-content`}
           data-tip="Write"
-          onClick={() => navigate({ to: '/articles/draft' })}
+          onClick={() => navigateEmailVerified({ to: '/articles/draft' })}
         >
           <NotePencilIcon size={16} className="my-1.5" />
           <span className="is-drawer-close:hidden">Write</span>

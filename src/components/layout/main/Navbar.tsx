@@ -2,10 +2,13 @@ import { SignedIn, SignedOut, UserButton } from '@neondatabase/auth-ui';
 import { NotePencilIcon } from '@phosphor-icons/react';
 import { useNavigate } from '@tanstack/react-router';
 
+import { useNavigateVerified } from '@/hooks/useNavigateVerified';
+
 import SidebarToggleButton from './SidebarToggleButton';
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { navigateEmailVerified } = useNavigateVerified();
 
   return (
     <nav className="navbar sticky top-0 z-10 bg-base-300">
@@ -22,7 +25,7 @@ export default function Navbar() {
       <div className="navbar-end flex gap-2">
         <button
           className="btn hidden btn-outline btn-sm btn-primary lg:inline-flex lg:btn-md"
-          onClick={() => navigate({ to: '/articles/draft' })}
+          onClick={() => navigateEmailVerified({ to: '/articles/draft' })}
         >
           <NotePencilIcon size={24} weight="thin" />
           Write
