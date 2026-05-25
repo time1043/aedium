@@ -14,6 +14,7 @@ import { Route as MainRouteRouteImport } from './routes/_main/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthPathnameRouteImport } from './routes/auth/$pathname'
 import { Route as MainArticlesIndexRouteImport } from './routes/_main/articles/index'
+import { Route as MainArticlesDraftRouteImport } from './routes/_main/articles/draft'
 import { Route as MainAccountPathnameRouteImport } from './routes/_main/account/$pathname'
 
 const AuthRouteRoute = AuthRouteRouteImport.update({
@@ -40,6 +41,11 @@ const MainArticlesIndexRoute = MainArticlesIndexRouteImport.update({
   path: '/articles/',
   getParentRoute: () => MainRouteRoute,
 } as any)
+const MainArticlesDraftRoute = MainArticlesDraftRouteImport.update({
+  id: '/articles/draft',
+  path: '/articles/draft',
+  getParentRoute: () => MainRouteRoute,
+} as any)
 const MainAccountPathnameRoute = MainAccountPathnameRouteImport.update({
   id: '/account/$pathname',
   path: '/account/$pathname',
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRouteRouteWithChildren
   '/auth/$pathname': typeof AuthPathnameRoute
   '/account/$pathname': typeof MainAccountPathnameRoute
+  '/articles/draft': typeof MainArticlesDraftRoute
   '/articles/': typeof MainArticlesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -58,6 +65,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRouteRouteWithChildren
   '/auth/$pathname': typeof AuthPathnameRoute
   '/account/$pathname': typeof MainAccountPathnameRoute
+  '/articles/draft': typeof MainArticlesDraftRoute
   '/articles': typeof MainArticlesIndexRoute
 }
 export interface FileRoutesById {
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRouteRouteWithChildren
   '/auth/$pathname': typeof AuthPathnameRoute
   '/_main/account/$pathname': typeof MainAccountPathnameRoute
+  '/_main/articles/draft': typeof MainArticlesDraftRoute
   '/_main/articles/': typeof MainArticlesIndexRoute
 }
 export interface FileRouteTypes {
@@ -76,9 +85,16 @@ export interface FileRouteTypes {
     | '/auth'
     | '/auth/$pathname'
     | '/account/$pathname'
+    | '/articles/draft'
     | '/articles/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/auth/$pathname' | '/account/$pathname' | '/articles'
+  to:
+    | '/'
+    | '/auth'
+    | '/auth/$pathname'
+    | '/account/$pathname'
+    | '/articles/draft'
+    | '/articles'
   id:
     | '__root__'
     | '/'
@@ -86,6 +102,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/auth/$pathname'
     | '/_main/account/$pathname'
+    | '/_main/articles/draft'
     | '/_main/articles/'
   fileRoutesById: FileRoutesById
 }
@@ -132,6 +149,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainArticlesIndexRouteImport
       parentRoute: typeof MainRouteRoute
     }
+    '/_main/articles/draft': {
+      id: '/_main/articles/draft'
+      path: '/articles/draft'
+      fullPath: '/articles/draft'
+      preLoaderRoute: typeof MainArticlesDraftRouteImport
+      parentRoute: typeof MainRouteRoute
+    }
     '/_main/account/$pathname': {
       id: '/_main/account/$pathname'
       path: '/account/$pathname'
@@ -144,11 +168,13 @@ declare module '@tanstack/react-router' {
 
 interface MainRouteRouteChildren {
   MainAccountPathnameRoute: typeof MainAccountPathnameRoute
+  MainArticlesDraftRoute: typeof MainArticlesDraftRoute
   MainArticlesIndexRoute: typeof MainArticlesIndexRoute
 }
 
 const MainRouteRouteChildren: MainRouteRouteChildren = {
   MainAccountPathnameRoute: MainAccountPathnameRoute,
+  MainArticlesDraftRoute: MainArticlesDraftRoute,
   MainArticlesIndexRoute: MainArticlesIndexRoute,
 }
 
