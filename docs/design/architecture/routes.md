@@ -1,0 +1,19 @@
+- `/`
+  - `/articles`: all the articles (public)
+  - `/articles/:articleId`: article details (public)
+  - `/login`: login
+  - `/register`: register
+  - `/me`: current user center
+    - `/me/profile`: my profile
+    - `/me/articles`: my articles
+    - `/me/articles/`: create a new article
+    - `/me/articles/:id`: edit article
+    - `/me/comments`: my comments (optional)
+  - `/admin`: admin dashboard
+    - `/admin/users`: user list
+    - `/admin/users/:userId`: user details
+    - `/admin/articles`: all articles management
+    - `/admin/articles/:id`: article details (admin view)
+    - `/admin/comments`: all comments management
+  - `/403`: forbidden
+  - : not found

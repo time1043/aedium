@@ -1,0 +1,7 @@
+- [ ] As an administrator, I can log in to `view my profile`
+- [ ] As an administrator, I can `view all users` in the system
+- [ ] As an administrator, I can `view a specific user's information`
+- [ ] As an administrator, I can `view all articles` in the system, including draft and published articles
+- [ ] As an administrator, I can `delete any article`
+- [ ] As an administrator, I can `view all comments` in the system
+- [ ] As an administrator, I can `delete any comment`

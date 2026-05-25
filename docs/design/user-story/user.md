@@ -1,0 +1,15 @@
+- [ ] As a user, I can `log in to view` my profile
+- [ ] As a user, I can `create` a new article
+- [ ] As a user, I can `save my article as a draft`
+- [ ] As a user, I can `publish my own article`
+- [ ] As a user, I can `unpublish my own article and move it back to draft`
+- [ ] As a user, I can view the `list of my own articles`
+- [ ] As a user, I can `filter my own articles` by status, keyword, and sort order
+- [ ] As a user, I can `view the details` of my own article, including draft articles
+- [ ] As a user, I can `update` my own article
+- [ ] As a user, I can `delete` my own article
+- [ ] As a user, I can `add comments` to a published article
+- [ ] As a user, I can view comments on a published article
+- [ ] As a user, I can `delete my own comment`
+- [ ] As a user, I can view all the published articles
+- [ ] As a user, I can `log out`

@@ -1,0 +1,12 @@
+- Guests can view the list of published articles, view the details of a published article, and view the comments of a published article
+- Corresponding features:
+  - Storage of article data and comment data
+  - Provide APIs to retrieve the list of published articles
+  - Provide APIs to retrieve the details of a published article
+  - Provide APIs to retrieve comments of a published article
+
+- Guests can sign up for a new account and login to the system
+- Corresponding features:
+  - Storage user info
+  - Provide APIs to register a new account
+  - Provide APIs to login as a user

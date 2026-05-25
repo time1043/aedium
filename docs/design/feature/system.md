@@ -1,0 +1,14 @@
+- System validates request data and handles exceptions for invalid input, missing resources, and forbidden actions
+- Corresponding features:
+  - Validate request body, params, and query data
+  - Return clear error responses for invalid input
+  - Handle not-found exceptions for users, articles, and comments
+  - Handle forbidden exceptions for unauthorized operations
+  - Handle conflict exceptions such as duplicated email or username
+
+- The system provides API documentation, request logging, and security protection
+- Corresponding features:
+  - Provide OpenAPI / Swagger documentation
+  - Record request logs with the middleware logger
+  - Protect HTTP headers with Helmet
+  - Protect sensitive endpoints, such as login, rate limiting
