@@ -25,3 +25,7 @@ dist-ssr
 
 # for obsidian
 .obsidian/
+
+# for env
+.env*
+!.env.example
