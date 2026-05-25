@@ -1,0 +1,5 @@
+/* https://github.com/css-modules/css-modules */
+/* node_modules/@blocknote/react/src/editor/styles.css */
+.editor :global(.bn-editor) {
+  background-color: var(--color-base-100);
+}

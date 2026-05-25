@@ -16,8 +16,9 @@ function RouteComponent() {
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 
         <div className="drawer-content flex flex-col overflow-hidden">
-          <main className="flex-1 overflow-y-auto p-4">
+          <main className="flex-1 overflow-y-auto p-2 lg:pb-18">
             <Outlet />
+            {/* <div className="h-16" /> */}
           </main>
         </div>
 
